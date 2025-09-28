@@ -9,19 +9,19 @@ function D3JS({ d3Data }) {
 
         d3.select(ref.current).selectAll("*").remove();
 
-        var margin = 80;
-        var width = 400 + margin * 2;
-        var height = 150 + margin * 2;
-        var radius = 140;
+        const margin = 80;
+        const width = 400 + margin * 2;
+        const height = 150 + margin * 2;
+        const radius = 140;
 
-        var chartColor = d3.scaleOrdinal([
+        const chartColor = d3.scaleOrdinal([
             "#ffcd56",
             "#ff6384",
             "#36a2eb",
             "#fd6b19"
         ]);
 
-        var svg = d3.select(ref.current)
+        const svg = d3.select(ref.current)
             .append("svg")
             .attr("width", width)
             .attr("height", height)
@@ -36,11 +36,11 @@ function D3JS({ d3Data }) {
             .sort(null)
             .value(d => d.budget)(d3Data);
         
-        var arc = d3.arc()
+        const arc = d3.arc()
             .outerRadius(radius)
             .innerRadius(0);
         
-        var outerArc = d3.arc()
+        const outerArc = d3.arc()
             .innerRadius(radius * 0.9)
             .outerRadius(radius * 0.9);
 
